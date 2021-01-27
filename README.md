@@ -58,53 +58,38 @@ ones, but not tested.
 
 * https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/
 
-2. Clone repo
+2. Clone repo (windows)
 
 ```
-$ git clone https://gitlab.com/ricardoquesada/bluepad32.git
-$ cd bluepad32
+$ git clone https://gitlab.com/vcorp/esp32btpad.git
+$ cd esp32btpad
 $ git submodule update --init
 ```
 
-3. Integrate BTStack into ESP32
+3. Integrate BTStack into ESP32 (windows)
 
 ```
-$ cd ${BLUEPAD32}/external/btstack/ports/esp32
-$ ./integrate_btstack.py
+$ cd esp32btpad/external/btstack/port/esp32
+$ integrate_btstack.py
 ```
 
-4. Compile Bluepad32
+4. Compile ESP32btpad
 
 Choose target platform:
 
 ```
 # Choose target platform: unijoysticle, airlift, etc...
-$ export PLATFORM=unijoysticle
+$ cd to esp32btpad/src
+$ ..\..\export PLATFORM=unijoysticle
 ```
 
 And compile it:
 
 ```
-$ cd ${BLUEPAD32}/src
-$ make -j
+$ idf.py build
 ```
 
-5. Flash it
-
-```
-$ cd ${BLUEPAD32}/src
-$ make flash monitor
-```
-
-## Support
-
-* [Documentation][docs]
-* [Discord][discord]
-* [Google groups][forum]
-
-[docs]: https://gitlab.com/ricardoquesada/bluepad32/-/tree/master/docs
-[discord]: https://discord.gg/r5aMn6Cw5q
-[forum]: https://groups.google.com/forum/#!forum/unijoysticle
+5. Flash it using esp32flash utility
 
 ## License
 
